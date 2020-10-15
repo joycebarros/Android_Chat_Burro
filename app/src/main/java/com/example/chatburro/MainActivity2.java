@@ -3,7 +3,9 @@ package com.example.chatburro;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,9 +15,7 @@ import android.widget.Toast;
 
 public class MainActivity2 extends AppCompatActivity {
     private EditText edEntradaTexto2;
-    private String mensagem2;
     TextView textView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +34,7 @@ public class MainActivity2 extends AppCompatActivity {
                 String mensagemDevolvida = edEntradaTexto2.getText().toString();
                 Intent returnIntent = new Intent();
                 returnIntent.putExtra("KEY_MESSAGE2", mensagemDevolvida);
+
                 setResult(Activity.RESULT_OK,returnIntent);
                 finish();
 
@@ -41,4 +42,5 @@ public class MainActivity2 extends AppCompatActivity {
         });
 
     }
+
 }
